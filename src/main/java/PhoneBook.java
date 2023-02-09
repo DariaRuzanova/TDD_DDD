@@ -6,6 +6,11 @@ public class PhoneBook {
     public Map<String, String> contactList = new HashMap<>();
 
     public int add(String name, String phoneNumber) {
-        return 0;
+        if(!contactList.containsValue(phoneNumber)){
+            contactList.put(name,phoneNumber);
+        }else{
+            System.out.println("Контакт с таким номером существует в телефонной книге");
+        }
+        return contactList.size();
     }
 }
