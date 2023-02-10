@@ -41,12 +41,22 @@ class PhoneBookTest {
     }
 
     @Test
-    public void findByNumber() {
+    public void findByNumberTest() {
         String name1 = "Petya";
         String phone1 = "89171456678";
         phoneBook.add(name1, phone1);
         String expected = "Petya";
         String res = phoneBook.findByNumber(phone1);
+        assertEquals(expected, res);
+    }
+
+    @Test
+    public void findByNameTest() {
+        String name1 = "Petya";
+        String phone1 = "89171456678";
+        phoneBook.add(name1, phone1);
+        String expected = "89171456678";
+        String res = phoneBook.findByNumber(name1);
         assertEquals(expected, res);
     }
 }
