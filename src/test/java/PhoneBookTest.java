@@ -59,4 +59,14 @@ class PhoneBookTest {
         String res = phoneBook.findByName(name1);
         assertEquals(expected, res);
     }
+
+    @Test
+    public void printAllNamesTest() {
+        phoneBook.add("Petya", "89171456678");
+        phoneBook.add("Olya", "89681497863");
+        phoneBook.add("Vasya", "89271112233");
+        String expected = "[Olya, Petya, Vasya]";
+        String res = phoneBook.printAllNames();
+        assertEquals(expected, res);
+    }
 }
