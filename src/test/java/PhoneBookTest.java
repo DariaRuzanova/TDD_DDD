@@ -56,7 +56,7 @@ class PhoneBookTest {
         String phone1 = "89171456678";
         phoneBook.add(name1, phone1);
         String expected = "89171456678";
-        String res = phoneBook.findByNumber(name1);
+        String res = phoneBook.findByName(name1);
         assertEquals(expected, res);
     }
 }
