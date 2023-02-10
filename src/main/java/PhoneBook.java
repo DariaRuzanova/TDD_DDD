@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class PhoneBook {
-    public Map<String, String> contactList = new HashMap<>();
+    public TreeMap<String, String> contactList = new TreeMap<>();
 
     public int add(String name, String phoneNumber) {
         if (!contactList.containsValue(phoneNumber)) {
@@ -13,7 +13,15 @@ public class PhoneBook {
         }
         return contactList.size();
     }
-    public String findByNumber(String phoneNumber){
-        return null;
+
+    public String findByNumber(String phoneNumber) {
+        String name = "";
+        for (String k : contactList.keySet()) {
+            if (contactList.get(k).equals(phoneNumber)) {
+                name = k;
+                break;
+            }
+        }
+        return name;
     }
 }
